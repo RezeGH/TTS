@@ -31,6 +31,7 @@ cd tts-offline-piper
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+```
 
 Minimal requirements.txt
 piper-tts==1.3.0
