@@ -31,3 +31,49 @@ cd tts-offline-piper
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+
+Minimal requirements.txt
+piper-tts==1.3.0
+sounddevice==0.4.7
+soundfile==0.12.1
+numpy==1.26.4
+pystray==0.19.5
+Pillow==10.4.0
+keyboard==0.13.5
+pyperclip==1.9.0
+PySimpleGUI==5.0.8.3
+
+Run
+python main.py
+
+Build an Executable
+
+Using PyInstaller
+:
+
+.venv\Scripts\activate
+pyinstaller --onefile --noconsole --name TTSOffline ^
+  --add-data "models;models" ^
+  --collect-binaries sounddevice ^
+  --collect-data piper ^
+  main.py
+
+
+The final executable will be located in dist/TTSOffline.exe.
+
+Using with Discord (optional)
+
+With VB-Cable
+:
+
+Configure the application to output to CABLE Input (VB-Audio Virtual Cable).
+
+In Discord, set the microphone to CABLE Output.
+
+Discord will directly receive the synthesized speech.
+
+Development Note
+
+This project was created as an experiment.
+It was partially generated and assisted by AI tools.
+The code may contain limitations or require improvements. Contributions are welcome.
